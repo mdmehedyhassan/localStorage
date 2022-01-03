@@ -18,16 +18,20 @@
 
 
         <div class="m-5 p-5">
-            <label for="Name"></label>
+            <label for="">Name: </label>
             <input id="nameInput" type="text" placeholder="Enter your name..." class="form-control">
-            <label for="Age"></label>
+            <br>
+            <label for="">Age:</label>
             <input id="ageInput" type="text" placeholder="Enter your age..." class="form-control">
-            <label for="Email"></label>
+            <br>
+            <label for="">Email:</label>
             <input id="emailInput" type="email" placeholder="Enter your email..." class="form-control">
             <button onclick="submit()" class="btn btn-success m-3">Submit</button>
+            <br>
+            <button onclick="localStorage.clear(), location.reload()" class="btn btn-danger m-3">Clear all data</button>
         </div>
     </div>
-<button class="btn btn-success"><a href="https://github.com/mdmehedyhassan/locaStorage" target="_blank" rel="noopener noreferrer">git code</a></button>
+    <button class="btn btn-info m-5"><a style="color: white; text-decoration: none" href="https://github.com/mdmehedyhassan/localStorage" target="_blank" rel="noopener noreferrer">git code</a></button>
     <script>
         const showInfoText = document.getElementById('showInfo');
         function submit() {
