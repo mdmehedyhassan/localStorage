@@ -56,13 +56,13 @@
     <script>
         const showInfoText = document.getElementById('showInfo');
         function submit() {
-            const nameInput = document.getElementById('nameInput').value;
-            const ageInput = document.getElementById('ageInput').value;
-            const emailInput = document.getElementById('emailInput').value;
+            const nameInput = document.getElementById('nameInput');
+            const ageInput = document.getElementById('ageInput');
+            const emailInput = document.getElementById('emailInput');
             const student = {
-                name: nameInput,
-                age: ageInput,
-                email: emailInput
+                name: nameInput.value,
+                age: ageInput.value,
+                email: emailInput.value
             };
             showInfoText.innerHTML = '';
             nameInput.value = '';
@@ -97,7 +97,7 @@
         function showInfo(stns) {
             for (let i = 0; i < stns.length; i++) {
                 const element = stns[i];
-                console.log(element);
+                // console.log(element);
                 const newDiv = document.createElement('div');
                 newDiv.className = "text-light col-md-4";
                 newDiv.innerHTML = `
