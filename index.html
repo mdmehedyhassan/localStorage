@@ -13,23 +13,30 @@
             background-color: rgb(12, 16, 73);
             color: white;
         }
-        .commonStyle{
+
+        .commonStyle {
             font-size: 25px;
             margin: 20px;
             padding: 20px;
             border-radius: 30px;
         }
-        .getInputClass{
+
+        .getInputClass {
             box-shadow: 5px 5px 15px #05ff05, -5px -5px 15px #05ff05;
+            color: #05ff05;
         }
-        .showDataClass{
+
+        .showDataClass {
             box-shadow: 5px 5px 15px #ff0505, -5px -5px 15px #ff0505;
+            color: #ff0505;
         }
-        .commonStyle:hover{
-            box-shadow: 5px 5px 15px #ff00e1, -5px -5px 15px #ff00e1;
+
+        .commonStyle:hover {
+            box-shadow: 5px 5px 15px #ffffff, -5px -5px 15px #ffffff;
+            color: white;
         }
     </style>
-    
+
 </head>
 
 <body>
@@ -52,7 +59,9 @@
             <button onclick="localStorage.clear(), location.reload()" class="btn btn-danger m-3">Clear all data</button>
         </div>
     </div>
-    <p class="m-5"><a class="commonStyle showDataClass" style="color: white; text-decoration: none" href="https://github.com/mdmehedyhassan/localStorage" target="_blank" rel="noopener noreferrer">git code</a></p>
+    <p class="m-5"><a class="commonStyle showDataClass" style="text-decoration: none"
+            href="https://github.com/mdmehedyhassan/localStorage" target="_blank" rel="noopener noreferrer">git code</a>
+    </p>
     <script>
         const showInfoText = document.getElementById('showInfo');
         function submit() {
@@ -64,10 +73,6 @@
                 age: ageInput.value,
                 email: emailInput.value
             };
-            showInfoText.innerHTML = '';
-            nameInput.value = '';
-            ageInput.value = '';
-            emailInput.value = '';
             let stns;
             if (student.name != '' && student.age != '' && student.email != '') {
                 if (localStorage.getItem('students')) {
@@ -79,14 +84,12 @@
                 }
                 stns.push(student);
                 localStorage.setItem('students', JSON.stringify(stns))
+                showInfoText.innerHTML = '';
+                nameInput.value = '';
+                ageInput.value = '';
+                emailInput.value = '';
+                showInfo(stns);
             }
-            else {
-                if (localStorage.getItem('students')) {
-                    const getStudent = localStorage.getItem('students')
-                    stns = JSON.parse(getStudent);
-                }
-            }
-            showInfo(stns);
         }
         if (localStorage.getItem('students')) {
             const getStudent = localStorage.getItem('students')
