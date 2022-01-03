@@ -8,6 +8,28 @@
     <title>localStorage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(12, 16, 73);
+            color: white;
+        }
+        .commonStyle{
+            font-size: 25px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 30px;
+        }
+        .getInputClass{
+            box-shadow: 5px 5px 15px #05ff05, -5px -5px 15px #05ff05;
+        }
+        .showDataClass{
+            box-shadow: 5px 5px 15px #ff0505, -5px -5px 15px #ff0505;
+        }
+        .commonStyle:hover{
+            box-shadow: 5px 5px 15px #ff00e1, -5px -5px 15px #ff00e1;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -16,8 +38,7 @@
 
         </div>
 
-
-        <div class="m-5 p-5">
+        <div class="getInputClass commonStyle">
             <label for="">Name: </label>
             <input id="nameInput" type="text" placeholder="Enter your name..." class="form-control">
             <br>
@@ -31,7 +52,7 @@
             <button onclick="localStorage.clear(), location.reload()" class="btn btn-danger m-3">Clear all data</button>
         </div>
     </div>
-    <button class="btn btn-info m-5"><a style="color: white; text-decoration: none" href="https://github.com/mdmehedyhassan/localStorage" target="_blank" rel="noopener noreferrer">git code</a></button>
+    <p class="m-5"><a class="commonStyle showDataClass" style="color: white; text-decoration: none" href="https://github.com/mdmehedyhassan/localStorage" target="_blank" rel="noopener noreferrer">git code</a></p>
     <script>
         const showInfoText = document.getElementById('showInfo');
         function submit() {
@@ -80,7 +101,7 @@
                 const newDiv = document.createElement('div');
                 newDiv.className = "text-light col-4";
                 newDiv.innerHTML = `
-                    <div class="m-3 bg-success p-2">
+                    <div class="showDataClass commonStyle">
                         <h4>Name: ${element.name}</h4>
                         <h5>Age: ${element.age}</h5>
                         <p>email: ${element.email} </p>
