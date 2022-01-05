@@ -133,14 +133,13 @@
 
         // এটার মাধ্যমে যেকোনো এরো থেকে পুস্ট রিমুভ করা যাবে।
         function removeArray(idRemove) {
-            const stns = JSON.parse(localStorage.getItem('students'));
-            console.log(stns)
-            let newStn = [];
+            let stns = JSON.parse(localStorage.getItem('students'));
+            // console.log(stns)
             const filterStn = stns.filter(rr => rr.id != idRemove)
-            newStn.push(filterStn)
-            console.log(newStn[0])
-            localStorage.setItem('students', JSON.stringify(newStn[0]))
-            showInfo(newStn[0]);
+            // console.log(newStn)
+            stns = filterStn;
+            localStorage.setItem('students', JSON.stringify(stns))
+            showInfo(stns);
         }
 
 
